@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Messenger</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Secure Messenger</h1>
+            <div class="user-info" id="userInfo"></div>
+        </header>
+        
+        <div class="main-content">
+            <aside class="sidebar">
+                <button id="newChatBtn">Создать чат</button>
+                <button id="joinChatBtn">Присоединиться</button>
+                <div class="chat-list" id="chatList"></div>
+            </aside>
+            
+            <main class="chat-area">
+                <div class="chat-header">
+                    <h2 id="currentChatName">Выберите чат</h2>
+                    <button id="chatSettingsBtn">Настройки чата</button>
+                </div>
+                
+                <div class="messages-container" id="messagesContainer">
+                    <div class="no-chat-selected">
+                        <p>Выберите чат или создайте новый</p>
+                    </div>
+                </div>
+                
+                <div class="message-input">
+                    <input type="text" id="messageInput" placeholder="Введите сообщение..." disabled>
+                    <button id="sendMessageBtn" disabled>Отправить</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Модальные окна -->
+    <div id="newChatModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Создать новый чат</h2>
+            <input type="text" id="chatNameInput" placeholder="Название чата">
+            <input type="password" id="chatPasswordInput" placeholder="Пароль (необязательно)">
+            <button id="createChatBtn">Создать</button>
+        </div>
+    </div>
+
+    <div id="joinChatModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Присоединиться к чату</h2>
+            <input type="text" id="chatIdInput" placeholder="ID чата">
+            <input type="password" id="joinPasswordInput" placeholder="Пароль">
+            <button id="joinChatConfirmBtn">Присоединиться</button>
+        </div>
+    </div>
+
+    <div id="chatSettingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Настройки чата</h2>
+            <div class="chat-info">
+                <p><strong>ID чата:</strong> <span id="chatIdDisplay"></span></p>
+                <div class="password-section">
+                    <input type="password" id="newPasswordInput" placeholder="Новый пароль">
+                    <button id="changePasswordBtn">Изменить пароль</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
